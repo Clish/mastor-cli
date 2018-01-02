@@ -2,13 +2,20 @@
   "name": "mastor-cli",
   "version": "1.0.0",
   "description": "master of react",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clish/mastor-cli"
+  },
   "bin": {
-    "mastor-cli": "mastor.js"
+    "mastor": "./bin/mastor.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "clish.wang",
-  "license": "MIT"
+  "author": "clishwang",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0"
+  }
 }
