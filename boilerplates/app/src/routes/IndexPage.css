@@ -12,8 +12,8 @@
 }
 
 .welcome {
-  height: 640px;
-  background: url(../assets/hope_smile.jpg) no-repeat center 0;
+  height: 400px;
+  background: url(../assets/hope_smile.jpg) no-repeat center -120px;
   background-size: 640px;
 }
 
