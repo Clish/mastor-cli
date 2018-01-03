@@ -1,9 +1,9 @@
-import { api } from 'dva-ast';
 import upperCamelCase from 'simple-uppercamelcase';
 import { basename, dirname, join } from 'path';
 import { statSync, readFileSync } from 'fs';
 import pathExists from 'path-exists';
 import leftPad from 'left-pad';
+import { api } from 'dva-ast';
 import chalk from 'chalk';
 
 function info(type, message) {
@@ -16,7 +16,7 @@ function error(message) {
 
 function getBabelRc(cwd) {
   const rcPath = join(cwd, '.dvarc');
-  if(pathExists.sync(rcPath)) {
+  if (pathExists.sync(rcPath)) {
     return JSON.parse(readFileSync(rcPath, 'utf-8'));
   } else return {};
 }
@@ -60,7 +60,7 @@ function generate(program, { cwd }) {
       default: error(`ERROR: uncaught type ${type}`); break;
     }
 
-  } catch(e) {
+  } catch (e) {
     error(e.stack);
   }
 }

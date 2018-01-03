@@ -1,9 +1,9 @@
+import { sync as emptyDir } from 'empty-dir';
 import { join, basename } from 'path';
-import vfs from 'vinyl-fs';
 import { renameSync } from 'fs';
 import through from 'through2';
-import { sync as emptyDir } from 'empty-dir';
 import leftPad from 'left-pad';
+import vfs from 'vinyl-fs';
 import chalk from 'chalk';
 
 function info(type, message) {
@@ -24,7 +24,7 @@ function init({ demo, install }) {
   const dest = process.cwd();
   const projectName = basename(dest);
 
-  if(!emptyDir(dest)) {
+  if (!emptyDir(dest)) {
     error('Existing files here, please run init command in an empty folder!');
     process.exit(1);
   }
@@ -38,12 +38,10 @@ function init({ demo, install }) {
     .on('end', function() {
       info('rename', 'gitignore -> .gitignore');
       renameSync(join(dest, 'gitignore'), join(dest, '.gitignore'));
-      if(install) {
+      if (install) {
         info('run', 'npm install');
         require('./install')(printSuccess);
-      } else {
-        printSuccess();
-      }
+      } else printSuccess();
     })
     .resume();
 
@@ -60,8 +58,8 @@ Happy for coding...`);
 }
 
 function template(dest, cwd) {
-  return through.obj(function(file, enc, cb) {
-    if(!file.stat.isFile()) return cb();
+  return through.obj(function (file, enc, cb) {
+    if (!file.stat.isFile()) return cb();
     info('create', file.path.replace(cwd + '/', ''));
     this.push(file);
     cb();

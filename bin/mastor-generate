@@ -8,4 +8,4 @@ program
   .option('--entry [entry]', 'Specify entry path, default ${base}/src')
   .parse(process.argv);
 
-require('../lib/generate')(program, { cwd: process.cwd });
+require('../lib/generate')(program, { cwd: process.cwd() });
