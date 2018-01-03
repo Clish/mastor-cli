@@ -1,0 +1,29 @@
+{
+  "entry": "src/index.js",
+  "publicPath": "./",
+  "proxy": {
+    "/services": {
+      "target": "http://58.215.174.164:16800/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/services" : "" }
+    }
+  },
+  "theme": {
+//    "primary-color": "#7A47A6"
+  },
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "style": true }]
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "style": true }]
+      ]
+    }
+  }
+}
