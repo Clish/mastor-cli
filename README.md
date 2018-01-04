@@ -11,7 +11,7 @@ Install, create and start.
 $ npm install mastor-cli -g
 
 # Create app
-$ dva new myapp
+$ mastor new myapp
 
 # Start app
 $ cd myapp
