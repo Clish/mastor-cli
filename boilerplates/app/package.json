@@ -1,27 +1,20 @@
 {
-  "private": true,
-  "scripts": {
-    "start": "roadhog server",
-    "build": "roadhog build",
-    "lint": "eslint --ext .js src test",
-    "precommit": "npm run lint"
-  },
-  "dependencies": {
-    "antd": "^3.1.6",
-    "babel-plugin-import": "^1.6.3",
-    "dva": "^2.1.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  },
-  "devDependencies": {
-    "babel-plugin-dva-hmr": "^0.3.2",
-    "eslint": "^4.14.0",
-    "eslint-config-umi": "^0.1.1",
-    "eslint-plugin-flowtype": "^2.34.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
-    "redbox-react": "^1.4.3",
-    "roadhog": "^2.0.0"
-  }
+    "name": "ts-umi-dva",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "umi dev",
+        "build": "umi build"
+    },
+    "dependencies": {
+        "dva": "^2.2.3",
+        "umi": "^1.1.6",
+        "umi-plugin-dva": "^0.6.1",
+        "umi-plugin-routes": "^0.1.2"
+    },
+    "devDependencies": {
+        "@types/node": "^9.6.5",
+        "@types/react": "^16.3.11",
+        "babel-plugin-module-resolver": "^3.1.1",
+        "ts-jest-babel-7": "^22.0.7"
+    }
 }
